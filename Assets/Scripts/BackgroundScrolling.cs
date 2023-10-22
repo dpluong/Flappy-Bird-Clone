@@ -17,7 +17,10 @@ public class BackgroundScrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScrollBackground();
+        if (GameManager.gameManager.IsGameStart())
+        {
+            ScrollBackground();
+        }
     }
 
     private void ScrollBackground()

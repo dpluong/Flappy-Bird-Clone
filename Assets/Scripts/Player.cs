@@ -21,7 +21,13 @@ public class Player : MonoBehaviour
     
     //[SerializeField] AudioSource dieAudio, pointAudio, flyAudio;
 
-    [SerializeField] private float upForce = 5f;
+    [SerializeField] 
+    private float upForce = 5f;
+
+    [SerializeField]
+    private float rotationSpeed = 10f;
+
+    
     bool _isAlive = true;
 
 
@@ -38,16 +44,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_isAlive) {
+        if (_isAlive) 
+        {
             Jump();
         }
+
+        transform.rotation = Quaternion.Euler(0, 0, rigidBody.velocity.y * rotationSpeed);
     }
 
     private void Jump()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rigidBody.gravityScale = 0.5f;
+            rigidBody.gravityScale = 1f;
             rigidBody.velocity = new Vector2(0, upForce);    
         } 
     }
@@ -58,7 +67,7 @@ public class Player : MonoBehaviour
         {
             //pointAudio.Play();
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            GameManager.gameManager.PlayerScored();
+            GameManager.gameManager.IncreasePlayerScore();
             
 
         }
@@ -72,7 +81,7 @@ public class Player : MonoBehaviour
             _isAlive = false;
             //dieAudio.Play();
             GetComponent<Animator>().SetTrigger("die");
-            GameManager.gameManager.IsGameOver(true);
+            GameManager.gameManager.GameOver(true);
             this.enabled = false;
         }
     }

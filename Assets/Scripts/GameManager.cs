@@ -10,17 +10,25 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
 
     [Header("Game Play Settings")]
-    public float scrollingSpeed = 0f;
+    public float scrollingSpeed = 3f;
 
     [Header("UI Manager")]
-    [SerializeField] private GameObject startMenu;
-    [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private GameObject scoreText;
-    [SerializeField] private GameObject medal;
-    [SerializeField] private GameObject finalScore;
-    [SerializeField] private GameObject bestScoreText;
+    [SerializeField] 
+    private GameObject startMenu;
+    [SerializeField] 
+    private GameObject gameOverPanel;
+    [SerializeField]
+    private GameObject scoreText;
+    [SerializeField] 
+    private GameObject medal;
+    [SerializeField] 
+    private GameObject finalScore;
+    [SerializeField] 
+    private GameObject bestScoreText;
 
     private bool isGameOver = false;
+    private bool isGameStart = false;
+
     private int currentScore = 0;
     private int scoreToGetMedal = 9;
     private int bestScore;
@@ -50,7 +58,6 @@ public class GameManager : MonoBehaviour
         if (isGameOver) 
         {
             UpdateScorePanel();
-            gameOverPanel.SetActive(true);
             
             if (Input.GetMouseButtonDown(0)) 
             {
@@ -60,17 +67,22 @@ public class GameManager : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0)) 
         {
-            scrollingSpeed = 3f;
+            isGameStart = true;
             startMenu.GetComponent<Animator>().SetTrigger("close");
         } 
     }
 
-    public void IsGameOver(bool gameOverFlag) 
+    public void GameOver(bool gameOverFlag) 
     {
         isGameOver = gameOverFlag;
     }
 
-    public void PlayerScored() 
+    public bool IsGameStart()
+    {
+        return isGameStart;
+    }
+
+    public void IncreasePlayerScore() 
     {
         if (!isGameOver) 
         {
@@ -96,5 +108,7 @@ public class GameManager : MonoBehaviour
         {
             medal.SetActive(true);
         }
+
+        gameOverPanel.SetActive(true);
     }
 }
