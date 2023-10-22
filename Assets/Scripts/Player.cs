@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// this script is used to control our player
@@ -74,7 +72,7 @@ public class Player : MonoBehaviour
             _isAlive = false;
             //dieAudio.Play();
             GetComponent<Animator>().SetTrigger("die");
-            GameManager.gameManager.DisplayGameOverPanel();
+            GameManager.gameManager.IsGameOver(true);
             this.enabled = false;
         }
     }

@@ -8,13 +8,16 @@ public class GenerateColumns : MonoBehaviour
     public int columnAmountToPool = 10;
     private List<GameObject> columnPool;
     public GameObject columnToPool;
-    private float columnYPositionMin = 4f;
-    private float columnYPositionMax = 5f;
-    private float columnXPosition = 12f;
-    private Vector2 initPosition = new Vector2(-12f, -9f);
+    
+    [SerializeField] private float columnYPositionMin = 4f;
+    [SerializeField] private float columnYPositionMax = 5f;
+    [SerializeField] private float columnXPosition = 12f;
+    [SerializeField] private Vector2 initPosition = new Vector2(-12f, -9f);
+    
     private float timeSinceLastGenerated;
-    private float generateRate = 3f; 
+    [SerializeField] private float generateRate = 3f; 
     private int currentColumn = 0;
+
     void Start()
     {
         columnPool = new List<GameObject>();

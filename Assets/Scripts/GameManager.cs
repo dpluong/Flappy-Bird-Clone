@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,86 +7,93 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    [Header("Input, config")]
-    [SerializeField] public float speed = 0f;
-
-    [Header("Scene refs")]
-    // Start is called before the first frame update
-    public GameObject startMenu;
-    public GameObject gameOverPanel;
-    public GameObject scoreText;
-    public GameObject medal;
-    public GameObject finalScore;
-    public GameObject bestScoreText;
-
-    bool _isGameOver = false;
-    private int _score = 0;
-    private int _scoreToGetMedal = 9;
-    private int bestScore;
-    
-
-    #region SIngleton
     public static GameManager gameManager;
+
+    [Header("Game Play Settings")]
+    public float scrollingSpeed = 0f;
+
+    [Header("UI Manager")]
+    [SerializeField] private GameObject startMenu;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject scoreText;
+    [SerializeField] private GameObject medal;
+    [SerializeField] private GameObject finalScore;
+    [SerializeField] private GameObject bestScoreText;
+
+    private bool isGameOver = false;
+    private int currentScore = 0;
+    private int scoreToGetMedal = 9;
+    private int bestScore;
+
+    const string BESTcurrentScore_KEY = "bestScore";
+
     void Awake()
     {
-        // singleton.
         if (gameManager == null)
+        {
             gameManager = this;
-
-        else if (gameManager != this)
+        }
+        else 
         {
             Destroy(gameObject);
         }
     }
-    #endregion//Singleton
 
-
-    const string BEST_SCORE_KEY = "bestScore";
     void Start()
     {
-        bestScore = PlayerPrefs.GetInt(BEST_SCORE_KEY);
+        bestScore = PlayerPrefs.GetInt(BESTcurrentScore_KEY);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_isGameOver) {
+        if (isGameOver) 
+        {
             UpdateScorePanel();
             gameOverPanel.SetActive(true);
             
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0)) 
+            {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
         
-        if (Input.GetMouseButtonDown(0)) {
-            speed = 3f;
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            scrollingSpeed = 3f;
             startMenu.GetComponent<Animator>().SetTrigger("close");
         } 
     }
 
-    public void DisplayGameOverPanel() {
-        _isGameOver = true;
+    public void IsGameOver(bool gameOverFlag) 
+    {
+        isGameOver = gameOverFlag;
     }
 
     public void PlayerScored() 
     {
-        if (!_isGameOver) {
-            _score += 1;
-            scoreText.GetComponent<Text>().text = _score.ToString();
+        if (!isGameOver) 
+        {
+            currentScore += 1;
+            scoreText.GetComponent<Text>().text = currentScore.ToString();
         }
     }
 
-    public void UpdateScorePanel() {
+    public void UpdateScorePanel() 
+    {
         bestScore = PlayerPrefs.GetInt("bestScore");
         
-        if (_score > bestScore) {
-            bestScore = _score;
+        if (currentScore > bestScore) 
+        {
+            bestScore = currentScore;
             PlayerPrefs.SetInt("bestScore", bestScore);
         }
+        
         bestScoreText.GetComponent<Text>().text = bestScore.ToString();
-        finalScore.GetComponent<Text>().text = _score.ToString();
-        if (_score >= _scoreToGetMedal) {
+        finalScore.GetComponent<Text>().text = currentScore.ToString();
+        
+        if (currentScore >= scoreToGetMedal) 
+        {
             medal.SetActive(true);
         }
     }

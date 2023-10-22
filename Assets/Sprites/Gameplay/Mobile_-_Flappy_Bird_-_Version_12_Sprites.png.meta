@@ -246,7 +246,7 @@ TextureImporter:
       213: 7820684343916661857
     second: Mobile_-_Flappy_Bird_-_Version_12_Sprites_80
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -267,6 +267,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -276,8 +277,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -298,11 +299,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -342,6 +346,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2066,6 +2082,88 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_74: 2553269685868417961
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_22: 3246331101951187852
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_33: -2757556559376086061
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_11: -6761878178903843020
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_3: -2141016550246149585
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_49: -5027068215810086279
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_27: -4800368168582009396
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_20: -8322031892792033309
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_24: 2267829879182247246
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_64: -9010178142700446373
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_15: 661590480844596861
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_48: -3777503300874056156
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_53: 1491121413460371638
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_67: -2397870993619318460
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_79: 4937992602569376010
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_39: 9130204348715852699
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_62: 8890414375887426729
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_43: -8245437130338720876
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_71: 3336707991304127649
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_29: 6353952231910124325
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_37: 8751731906666011577
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_46: 8170389168408654114
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_50: -7134692490603626823
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_2: 6472961679625383726
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_23: 1541647098208801554
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_45: -6667329700453121043
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_32: -491287601307924913
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_28: 2725678249564001643
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_69: 2110686209675588307
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_54: 6299080185742318884
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_25: -1940978614606451385
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_14: 2030559818675501950
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_60: 1465789521523121164
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_56: 6470606085021396617
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_61: -3825185057530797128
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_5: -2656503226305612809
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_55: -1430678723816713586
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_51: 7658506844781645013
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_70: -4593708515051396011
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_13: 2086113204867638921
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_47: 4832545000321325629
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_36: 8084081668143064423
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_52: -3003428427464961647
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_58: 409958968668833047
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_59: -2587161426184956880
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_1: 6380110910848376140
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_21: 4130277134134168611
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_8: -3745054235242335672
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_38: 8294180124765384302
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_6: 4248334568885484128
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_0: -4809848789275346676
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_44: -1678759010647280766
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_7: -761990647980889554
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_77: -3366603208473742697
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_63: 2872261587192507924
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_17: -670899506385400815
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_10: -7587339162844714286
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_68: 2454510928822535937
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_40: 3346099550627906120
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_16: -3252560555081686233
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_35: 2388693232089010316
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_30: 3880650365157736809
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_42: 1256593265306526408
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_34: -7476064253715994654
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_65: -6926615455424939753
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_57: -1971892099160864069
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_72: 2393472659017795687
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_31: 1759155942516925951
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_80: 7820684343916661857
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_4: -7888693531116071314
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_73: -6060685001368602642
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_76: -5544635725008898091
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_41: -1737777625468372541
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_66: -7122538089172231223
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_19: 806707618465563041
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_9: -4224630805335588393
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_26: 8183873428824154039
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_18: -8683784524769483273
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_78: -8219100507638828603
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_75: 564130664645985960
+      Mobile_-_Flappy_Bird_-_Version_12_Sprites_12: 3515004085854484646
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -22,8 +22,6 @@ public class Columns : MonoBehaviour
     }
     private void ScrollColumns()
     {
-        transform.Translate(new Vector2(-1, 0) * GameManager.gameManager.speed * Time.deltaTime);
-
-        
+        transform.Translate(new Vector2(-1, 0) * GameManager.gameManager.scrollingSpeed * Time.deltaTime);
     }
 }

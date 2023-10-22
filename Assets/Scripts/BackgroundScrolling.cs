@@ -22,7 +22,7 @@ public class BackgroundScrolling : MonoBehaviour
 
     private void ScrollBackground()
     {
-        transform.Translate(new Vector2(-1, 0) * GameManager.gameManager.speed * Time.deltaTime);
+        transform.Translate(new Vector2(-1, 0) * GameManager.gameManager.scrollingSpeed * Time.deltaTime);
 
         if (transform.position.x < -10.5f)
         {
