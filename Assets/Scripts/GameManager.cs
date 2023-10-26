@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager;
+    //public static GameManager gameManager;
 
     [Header("Game Play Settings")]
     public float scrollingSpeed = 3f;
 
+    /*
     [Header("UI Manager")]
     [SerializeField] 
     private GameObject startMenu;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     private GameObject finalScore;
     [SerializeField] 
     private GameObject bestScoreText;
+    */
 
     private bool isGameOver = false;
     private bool isGameStart = false;
@@ -35,7 +37,47 @@ public class GameManager : MonoBehaviour
 
     const string BESTcurrentScore_KEY = "bestScore";
 
-    void Awake()
+
+    private static GameManager instance;
+    
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                SetupInstance();
+            }
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            //DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private static void SetupInstance()
+    {
+        instance = FindObjectOfType<GameManager>();
+        if (instance == null)
+        {
+            GameObject gameObj = new GameObject();
+            gameObj.name = "Singleton";
+            instance = gameObj.AddComponent<GameManager>();
+            //DontDestroyOnLoad(gameObj);
+        }
+    }
+
+    /*void Awake()
     {
         if (gameManager == null)
         {
@@ -45,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 
     void Start()
     {
@@ -57,7 +99,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOver) 
         {
-            UpdateScorePanel();
+            //UpdateScorePanel();
             
             if (Input.GetMouseButtonDown(0)) 
             {
@@ -65,10 +107,10 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             isGameStart = true;
-            startMenu.GetComponent<Animator>().SetTrigger("close");
+            //startMenu.GetComponent<Animator>().SetTrigger("close");
         } 
     }
 
@@ -77,9 +119,29 @@ public class GameManager : MonoBehaviour
         isGameOver = gameOverFlag;
     }
 
+    public bool IsGameOver()
+    {
+        return isGameOver;
+    }
+
     public bool IsGameStart()
     {
         return isGameStart;
+    }
+
+    public int GetBestScore()
+    {
+        return PlayerPrefs.GetInt("bestScore");
+    }
+
+    public int GetCurrentScore()
+    {
+        return currentScore;
+    }
+
+    public int GetMedalScore()
+    {
+        return scoreToGetMedal;
     }
 
     public void IncreasePlayerScore() 
@@ -87,10 +149,11 @@ public class GameManager : MonoBehaviour
         if (!isGameOver) 
         {
             currentScore += 1;
-            scoreText.GetComponent<Text>().text = currentScore.ToString();
+            //scoreText.GetComponent<Text>().text = currentScore.ToString();
         }
     }
 
+    /*
     public void UpdateScorePanel() 
     {
         bestScore = PlayerPrefs.GetInt("bestScore");
@@ -111,4 +174,5 @@ public class GameManager : MonoBehaviour
 
         gameOverPanel.SetActive(true);
     }
+    */
 }

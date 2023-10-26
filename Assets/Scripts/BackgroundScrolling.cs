@@ -17,7 +17,7 @@ public class BackgroundScrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.gameManager.IsGameStart())
+        if (GameManager.Instance.IsGameStart())
         {
             ScrollBackground();
         }
@@ -25,7 +25,7 @@ public class BackgroundScrolling : MonoBehaviour
 
     private void ScrollBackground()
     {
-        transform.Translate(new Vector2(-1, 0) * GameManager.gameManager.scrollingSpeed * Time.deltaTime);
+        transform.Translate(new Vector2(-1, 0) * GameManager.Instance.scrollingSpeed * Time.deltaTime);
 
         if (transform.position.x < -10.5f)
         {

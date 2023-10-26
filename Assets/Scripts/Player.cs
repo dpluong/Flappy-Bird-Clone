@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
         {
             //pointAudio.Play();
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            GameManager.gameManager.IncreasePlayerScore();
+            GameManager.Instance.IncreasePlayerScore();
             
 
         }
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
             _isAlive = false;
             //dieAudio.Play();
             GetComponent<Animator>().SetTrigger("die");
-            GameManager.gameManager.GameOver(true);
+            GameManager.Instance.GameOver(true);
             this.enabled = false;
         }
     }

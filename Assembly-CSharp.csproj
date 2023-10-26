@@ -42,6 +42,7 @@
      <Compile Include="Assets\Scripts\Columns.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\BackgroundScrolling.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Programs\2021.3.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

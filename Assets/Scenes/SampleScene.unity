@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e60000445334b79945f5c02bbadce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  scrollingSpeed: 3
   startMenu: {fileID: 460692720}
   gameOverPanel: {fileID: 346005437}
   scoreText: {fileID: 61771450}
@@ -2445,7 +2445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3238a0c04d63ef418b8a9fb0ea4f427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upForce: 3
+  upForce: 8
+  rotationSpeed: 10
 --- !u!82 &1870717168
 AudioSource:
   m_ObjectHideFlags: 0

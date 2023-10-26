@@ -13,7 +13,7 @@ public class Columns : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.gameManager.IsGameStart())
+        if (GameManager.Instance.IsGameStart())
         {
             ScrollColumns();
         }
@@ -21,6 +21,6 @@ public class Columns : MonoBehaviour
 
     private void ScrollColumns()
     {
-        transform.Translate(new Vector2(-1, 0) * GameManager.gameManager.scrollingSpeed * Time.deltaTime);
+        transform.Translate(new Vector2(-1, 0) * GameManager.Instance.scrollingSpeed * Time.deltaTime);
     }
 }
