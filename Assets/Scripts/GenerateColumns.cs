@@ -6,33 +6,32 @@ public class GenerateColumns : MonoBehaviour
 {
     // Start is called before the first frame update
     public int columnAmountToPool = 10;
-    private List<GameObject> columnPool;
     public GameObject columnToPool;
     
     [SerializeField] private float columnYPositionMin = 4f;
     [SerializeField] private float columnYPositionMax = 5f;
-    [SerializeField] private float columnXPosition = 12f;
-    [SerializeField] private Vector2 initPosition = new Vector2(-12f, -9f);
-    
+    [SerializeField] private float secondsToGenerateAColumn = 2f;
+
+    private float columnXPosition = 9f;
+    private Vector2 initPosition = new Vector2(-12f, -12f);
     private float timeSinceLastGenerated;
-    [SerializeField] private float generateRate = 3f; 
     private int currentColumn = 0;
+    private List<GameObject> columnPool;
 
     void Start()
     {
         columnPool = new List<GameObject>();
-        GameObject temp;
+
         for (int i = 0; i < columnAmountToPool; ++i) {
-            temp = Instantiate(columnToPool, initPosition, Quaternion.identity);
+            GameObject temp = Instantiate(columnToPool, initPosition, Quaternion.identity);
             columnPool.Add(temp);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeSinceLastGenerated += Time.deltaTime;
-        if (timeSinceLastGenerated >= generateRate) 
+        if (timeSinceLastGenerated >= secondsToGenerateAColumn) 
         {    
             timeSinceLastGenerated = 0f;
             
@@ -41,7 +40,7 @@ public class GenerateColumns : MonoBehaviour
             columnPool[currentColumn].transform.position = new Vector2(columnXPosition, columnYPosition);
             
             currentColumn += 1;
-            //print(currentColumn);
+
             if (currentColumn >= columnAmountToPool) 
             {
                 currentColumn = 0;
